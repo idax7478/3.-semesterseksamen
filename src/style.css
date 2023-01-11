@@ -204,3 +204,33 @@ input[type="number"] {
 .test {
   background: none;
 }
+
+/* -------------------------- ida rettelser ------------------------------ */
+
+.image-container {
+    position: relative;
+}
+
+.image {
+    z-index: 1;
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 2;
+}
+
+.image-container:hover .image {
+    display: hide;
+}
+
+.image-container:hover .hover-image {
+    display: block;
+}
+
+
+
+
