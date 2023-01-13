@@ -33,3 +33,18 @@ function fjernBoks() {
 if (sessionStorage.getItem("fjernboks")) {
   boks.classList.add("hidden");
 }
+
+
+/* Ida rettelser*/
+
+/* Import af Motion One bibliotek */
+import { animate, stagger, inView, scroll, timeline } from "motion"
+
+/* får body tl at fade ind, med en duration på 2 */
+animate( "body", { opacity: [ 0, 1] }, { duration: 2 })
+
+/* får knappen på forsiden til at pulsere, inde i html har jeg gjort så den pulsere mod center */
+animate(".mereanimate", 
+  { scale: [0.7, 0.95, 0.7, 0.95] }, 
+  { duration: 6, direction: "alternate", repeat: Infinity }
+)
