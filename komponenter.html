@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/bju1jkc.css" />
+    <title>Komponenter</title>
+    <script type="module" crossorigin src="./assets/main.453e5de3.js"></script>
+    <link rel="stylesheet" href="./assets/main.4e037f6d.css">
+  </head>
+  <body class="bg-pink-100 text-body_base text-copyColor">
+    <!-- Header -->
+    <header class="sticky top-0 z-10 bg-menuBackgroundColor">
+      <nav
+        class="flex items-center justify-between border-b-2 border-sienna-500 px-6 py-4 text-menulinks_mobile text-overskriftColor"
+      >
+        <div>
+          <a href="index.html"
+            ><img
+              class="w-20"
+              src="./img/julienielsdotter_logo-8.png"
+              alt="Logo - til forsiden"
+              title="Gå til forsiden"
+          /></a>
+        </div>
+
+        <div class="hidden sm:block">
+          <ul class="flex flex-col gap-10 sm:flex-row">
+            <li class="py-4">
+              <a class="a_underline relative" href="shop.html">Shop</a>
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="design_selv.html"
+                >Design selv</a
+              >
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="gavekort.html">Gavekort</a>
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="om_julie.html">Om Julie</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ikoner til søg og kurv -->
+        <div class="hidden sm:block">
+          <ul class="flex gap-5">
+            <li>
+              <img
+                src="./svg/soeg.svg"
+                alt="Søg på siden"
+                title="Søg på produkter"
+                class="cursor-pointer"
+              />
+            </li>
+            <li>
+              <a title="Gå til kurven" href="indkoebskurv.html"
+                ><img src="./svg/kurv.svg" alt="Til kurven"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Menu i mobil -->
+        <div
+          class="menu_punkter fixed top-0 right-0 z-10 hidden h-full w-screen bg-pink-100"
+        >
+          <!-- Ikon til luk i burger -->
+          <div class="flex justify-end pr-6 pt-10">
+            <img
+              class="menu_luk cursor-pointer"
+              src="./svg/close.svg"
+              alt="Luk menu"
+              title="Luk menu"
+            />
+          </div>
+
+          <!-- Menupunkter mobil -->
+          <ul class="flex w-full flex-col pt-6 text-center sm:flex-row">
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="index.html">Forside</a>
+            </li>
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="shop.html">Shop</a>
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="design_selv.html"
+                >Design selv</a
+              >
+            </li>
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="gavekort.html">Gavekort</a>
+            </li>
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="om_julie.html">Om Julie</a>
+            </li>
+          </ul>
+          <ul class="flex justify-center gap-8">
+            <li class="py-4">
+              <img
+                src="./svg/soeg.svg"
+                alt="Søg på siden"
+                title="Søg på produkter"
+                class="cursor-pointer"
+              />
+            </li>
+            <li class="py-4">
+              <a title="Gå til kurven" href="indkoebskurv.html"
+                ><img src="./svg/kurv.svg" alt="Til kurven"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ikon til burger menu -->
+        <div class="flex items-center gap-8 sm:hidden">
+          <img
+            class="menu_click w-8 cursor-pointer"
+            src="./svg/burger.svg"
+            alt="burger menu"
+            title="Åbn menu"
+          />
+        </div>
+      </nav>
+    </header>
+    <!-- Header slut -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+
+    <main class="main">
+      <h1 class="text-H1_desktop">Komponenter</h1>
+      <!-- Knapper-->
+      <div class="mb-10">
+        <!-- Almindelige knapper-->
+        <h3>Almindelige responsive knapper</h3>
+        <div class="mb-10">
+          <!-- Primary button-->
+          <p>Primary knapper</p>
+          <button
+            class="max-w-xs rounded-knapperRadius bg-primaryButton px-3 py-1 text-knaptekst text-primaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-primaryButtonHover hover:text-primaryButtonHoverTextColor hover:drop-shadow-knapHoverShadow focus:border-primaryButtonBorder focus:ring-4 focus:ring-primaryButtonBorder md:px-6 md:py-2"
+          >
+            Default
+          </button>
+          <!--  -->
+          <!-- Secondary button-->
+          <p>Secondary knapper</p>
+          <button
+            class="max-w-xs rounded-knapperRadius bg-secondaryButton px-3 py-1 text-knaptekst text-secondaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-secondaryButtonHover hover:drop-shadow-knapHoverShadow focus:border-secondaryButtonBorder focus:ring-4 focus:ring-secondaryButtonBorder md:px-6 md:py-2"
+          >
+            Default
+          </button>
+        </div>
+        <!-- Dropdown knapper-->
+        <h3>Dropdown knapper</h3>
+        <div class="mb-10">
+          <!-- Primary dropdown -->
+          <p>Primary dropdown</p>
+          <!-- <label for="DefaultDropdown" class=""></label> -->
+
+          <select
+            class="rounded-knapperRadius border-none bg-primaryButton py-1 pl-3 text-knaptekst text-primaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-primaryButtonHover hover:text-primaryButtonHoverTextColor hover:drop-shadow-knapHoverShadow focus:border-primaryButtonBorder focus:ring-4 focus:ring-primaryButtonBorder sm:py-2"
+            name="Default"
+            id="DefaultDropdown"
+            x-model="Default"
+            form="Default"
+            x-on:change="$nextTick(() => {Default()});"
+          >
+            <option selected>Default/Kategori</option>
+            <option value="1">Default</option>
+            <option value="2">Default</option>
+            <option value="3">Default</option>
+            <option value="4">Default</option>
+          </select>
+
+          <!--  -->
+          <!-- Secondary dropdown -->
+          <p>Secondary dropdown</p>
+          <!-- <label for="DefaultDropdown" class=""></label> -->
+
+          <select
+            class="rounded-knapperRadius border-none bg-secondaryButton py-1 pl-3 text-knaptekst text-secondaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-secondaryButtonHover hover:drop-shadow-knapHoverShadow focus:border-secondaryButtonBorder focus:ring-4 focus:ring-secondaryButtonBorder sm:py-2"
+            name="Default"
+            id="DefaultDropdown"
+            x-model="Default"
+            form="Default"
+            x-on:change="$nextTick(() => {Default()});"
+          >
+            <option selected>Default/Kategori</option>
+            <option value="1">Default</option>
+            <option value="2">Default</option>
+            <option value="3">Default</option>
+            <option value="4">Default</option>
+          </select>
+        </div>
+      </div>
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!-- Forms -->
+      <h2 class="text-H2_desktop">Forms</h2>
+      <div>
+        <div class="mb-10">
+          <h3>Form text</h3>
+          <!-- Form til tekst -->
+          <form>
+            <label class="text-body_xs" for="Default"> Default </label>
+            <input
+              class="block w-full rounded-formRadius border-formBorder bg-formBgColor text-fromPlaceholderTextColor transition ease-in focus:border-formFocusBorder focus:outline-none focus:ring-2 focus:ring-formFocusBorder"
+              id="Default"
+              type="text"
+              placeholder="Default"
+              name="Default"
+              autocomplete="Default"
+              required
+            />
+            <!-- Valgfrit -->
+            <p class="text-body_xs">*Default</p>
+          </form>
+        </div>
+
+        <div class="mb-10">
+          <h3>Form text i høj</h3>
+          <!-- Form til tekst -->
+          <form class="">
+            <div class="">
+              <label class="" for="Default"> Default </label>
+              <input
+                class="block w-full rounded-formRadius border-formBorder bg-formBgColor pb-96 text-fromPlaceholderTextColor transition ease-in focus:border-formFocusBorder focus:outline-none focus:ring focus:ring-formFocusBorder md:pb-60"
+                id="Default"
+                type="text"
+                placeholder="Default"
+              />
+              <p class="text-body_xs">*Default</p>
+            </div>
+          </form>
+        </div>
+        <div class="mb-10">
+          <h3>Form number</h3>
+          <!-- Form til tekst -->
+          <form>
+            <div class="">
+              <label class="" for="Default"> Default </label>
+              <input
+                class="block w-full rounded-formRadius border-formBorder bg-formBgColor text-fromPlaceholderTextColor transition ease-in focus:border-formFocusBorder focus:outline-none focus:ring focus:ring-formFocusBorder"
+                id="Default"
+                type="number"
+                placeholder="Default"
+              />
+              <p class="text-body_xs">*Default</p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!-- Cards -->
+      <h2 class="text-H2_desktop">Cards</h2>
+      <div class="mb-10">
+        <div class="mb-10 flex flex-row gap-10">
+          <!--  -->
+          <!--  -->
+          <!-- Selve cartet -->
+          <article
+            class="basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+          >
+            <!-- Nyhedsikon -->
+            <img
+              class="absolute top-10 z-50"
+              src="./img/nyhed.png"
+              alt="dette er en nyhed"
+            />
+            <!--  -->
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="./img/7-PearlHoop.webp"
+                alt="pearl hoop"
+              />
+              <div class="p-6">
+                <p class="text-body_semibold">
+                  <span class="before">Default</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_base">bla bla bla</p>
+                    <p class="before text-body_base">DKK</p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-2">
+                    <img
+                      class="before h-5 w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before h-5 w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before h-5 w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+          <!--  -->
+          <!--  -->
+          <!-- Selve cartet -->
+          <article
+            class="basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+          >
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="./img/7-PearlHoop.webp"
+                alt="pearl hoop"
+              />
+              <div class="p-6">
+                <p class="text-body_semibold">
+                  <span class="before">Default</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_base">bla bla bla</p>
+                    <p class="before text-body_base">DKK</p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-2">
+                    <img
+                      class="before h-5 w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before h-5 w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before h-5 w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+          <!--  -->
+          <!--  -->
+          <!-- Selve cartet -->
+          <article
+            class="basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+          >
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="./img/7-PearlHoop.webp"
+                alt="pearl hoop"
+              />
+              <div class="p-6">
+                <p class="text-body_semibold">
+                  <span class="before">Default</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_base">14,8 kt. guld m. perler</p>
+                    <p class="before text-body_base">DKK</p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-2">
+                    <img
+                      class="before h-5 w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before h-5 w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before h-5 w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </main>
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- Footer -->
+    <footer
+      class="border-t-4 border-sienna-500 bg-footer pt-11 pb-4 text-body_xs"
+    >
+      <div class="footer_div mx-auto grid-cols-2 justify-evenly sm:grid">
+        <div class="justify-around sm:flex">
+          <div class="basis-full pb-10 sm:pb-0">
+            <p class="cursor-default text-body_semibold">Navigation</p>
+            <ul>
+              <li class="hover_underline"><a href="index.html">Forside</a></li>
+              <li class="hover_underline"><a href="shop.html">Shop</a></li>
+              <li class="hover_underline">
+                <a href="design_selv.html">Design selv</a>
+              </li>
+              <li class="hover_underline">
+                <a href="gavekort.html">Gavekort</a>
+              </li>
+              <li class="hover_underline"><a href="om_julie.html">Om os</a></li>
+            </ul>
+          </div>
+
+          <div class="basis-full pb-10 sm:pb-0">
+            <p class="cursor-default text-body_semibold">Information</p>
+            <ul>
+              <li class="hover_underline"><a href="#">FAQ</a></li>
+              <li class="hover_underline">
+                <a href="#">Forsendelses- og returpolitik</a>
+              </li>
+              <li class="hover_underline">
+                <a href="#">Handelsbetingelser</a>
+              </li>
+              <li class="hover_underline">
+                <a href="#">Cookie- og privatlivspolitik</a>
+              </li>
+              <li class="hover_underline">
+                <a href="om_julie.html  ">Kontakt</a>
+              </li>
+              <li class="hover_underline">
+                <a href="sitemap.html">Sitemap</a>
+              </li>
+              <li class="hover_underline">
+                <a href="komponenter.html">Komponenter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex justify-around">
+          <div class="basis-full">
+            <p class="cursor-default text-body_semibold">Butikken</p>
+            <ul>
+              <li class="hover_underline"><a href="#">Åbningstider</a></li>
+            </ul>
+          </div>
+          <div class="basis-full">
+            <p class="cursor-default text-body_semibold">Sociale medier</p>
+            <ul class="flex gap-4">
+              <li>
+                <a
+                  href="https://www.instagram.com/julienielsdotterjewellery/"
+                  target="_blank"
+                  ><img
+                    src="./svg/instagram.svg"
+                    alt="Instagram-ikon"
+                    title="Åbn Instagram"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/julienielsdotterjewellery"
+                  target="_blank"
+                  ><img
+                    src="./svg/facebook.svg"
+                    alt="FaceBook-ikon"
+                    title="Åbn Facebook"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="justify-center pt-16 text-center sm:flex">
+        <p class="text-body_xs">Copyright © 2022 | julienielsdotter.com</p>
+        <p>| Tlf. 30 32 52 07</p>
+      </div>
+      <div class="justify-center sm:flex">
+        <p class="text-center">CVR 12 34 56 78</p>
+      </div>
+    </footer>
+    <!-- Footer slut -->
+    
+  </body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/bju1jkc.css" />
+    <title>Forside</title>
+    <meta name="robots" content="noindex" />
+    <script type="module" crossorigin src="./assets/main.453e5de3.js"></script>
+    <link rel="stylesheet" href="./assets/main.4e037f6d.css">
+  </head>
+  <body class="bg-pink-100 text-body_base text-copyColor">
+    <!-- cookieboks -->
+    <div class="bottom-auto grid bg-pink-200 p-medium" id="cookieboks">
+      <div class="grid place-items-center">
+        <p class="place pb-small text-body_semibold">Vi anvender Cookies</p>
+        <p>
+          julienielsdotter.com anvender cookies for at kunne give dig den bedste
+          brugeroplevelse på vores hjemmeside, samt til markedsførings- og
+          analytiske formål. Ved at klikke “Accepter” bekræfter du, at du har
+          læst vores cookie politik og accepterer vores brug af cookies. Ønsker
+          du ikke at acceptere, eller vil du læse mere, kan du finde vores
+          politik for brug af
+          <a class="text-blue-900 underline" href="#">cookies</a>.
+        </p>
+      </div>
+
+      <div class="flex flex-row justify-center gap-3 p-small" id="accepter">
+        <button
+          class="max-w-xs rounded-knapperRadius bg-secondaryButton px-3 py-1 text-knaptekst text-secondaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-secondaryButtonHover hover:drop-shadow-knapHoverShadow focus:border-secondaryButtonBorder focus:ring-4 focus:ring-secondaryButtonBorder md:px-6 md:py-2"
+        >
+          Accepter
+        </button>
+        <button
+          class="rounded-knapperRadius bg-secondaryButton px-7 py-1 text-knaptekst text-secondaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-secondaryButtonHover hover:drop-shadow-knapHoverShadow focus:border-secondaryButtonBorder focus:ring-4 focus:ring-secondaryButtonBorder md:px-10 md:py-2"
+          id="afvis"
+        >
+          Afvis
+        </button>
+      </div>
+    </div>
+    <!-- Header -->
+    <header class="sticky top-0 z-10 bg-menuBackgroundColor">
+      <nav
+        class="flex items-center justify-between border-b-2 border-sienna-500 px-6 py-4 text-menulinks_mobile text-overskriftColor"
+      >
+        <div>
+          <a href="index.html"
+            ><img
+              class="w-20"
+              src="./img/julienielsdotter_logo-8.png"
+              alt="Logo - til forsiden"
+              title="Gå til forsiden"
+          /></a>
+        </div>
+
+        <div class="hidden sm:block">
+          <ul class="flex flex-col gap-10 sm:flex-row">
+            <li class="py-4">
+              <a class="a_underline relative" href="shop.html">Shop</a>
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="design_selv.html"
+                >Design selv</a
+              >
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="gavekort.html">Gavekort</a>
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="om_julie.html">Om Julie</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ikoner til søg og kurv -->
+        <div class="hidden sm:block">
+          <ul class="flex gap-5">
+            <li>
+              <img
+                src="./svg/soeg.svg"
+                alt="Søg på siden"
+                title="Søg på produkter"
+                class="cursor-pointer"
+              />
+            </li>
+            <li>
+              <a title="Gå til kurven" href="indkoebskurv.html"
+                ><img src="./svg/kurv.svg" alt="Til kurven"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Menu i mobil -->
+        <div
+          class="menu_punkter fixed top-0 right-0 z-10 hidden h-full w-screen bg-pink-100"
+        >
+          <!-- Ikon til luk i burger -->
+          <div class="flex justify-end pr-6 pt-10">
+            <img
+              class="menu_luk cursor-pointer"
+              src="./svg/close.svg"
+              alt="Luk menu"
+              title="Luk menu"
+            />
+          </div>
+
+          <!-- Menupunkter mobil -->
+          <ul class="flex w-full flex-col pt-6 text-center sm:flex-row">
+            <li class="w-full py-4">
+              <a class="a_chosen relative" href="index.html">Forside</a>
+            </li>
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="shop.html">Shop</a>
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="design_selv.html"
+                >Design selv</a
+              >
+            </li>
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="gavekort.html">Gavekort</a>
+            </li>
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="om_julie.html">Om Julie</a>
+            </li>
+          </ul>
+          <ul class="flex justify-center gap-8">
+            <li class="py-4">
+              <img
+                src="./svg/soeg.svg"
+                alt="Søg på siden"
+                title="Søg på produkter"
+                class="cursor-pointer"
+              />
+            </li>
+            <li class="py-4">
+              <a title="Gå til kurven" href="indkoebskurv.html"
+                ><img src="./svg/kurv.svg" alt="Til kurven"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ikon til burger menu -->
+        <div class="flex items-center gap-8 sm:hidden">
+          <img
+            class="menu_click w-8 cursor-pointer"
+            src="./svg/burger.svg"
+            alt="burger menu"
+            title="Åbn menu"
+          />
+        </div>
+      </nav>
+    </header>
+    <!-- Header slut -->
+
+    <main>
+      <!-- section 1 -->
+      <section class="main items-center justify-center sm:flex">
+        <div class="pt-large pb-medium sm:order-1">
+          <div class="image-container w-full max-w-sm">
+            <img src="./img/Stregtegning1.svg" class="image" alt="Original Image">
+            <img src="./svg/blinker-m-baggrund-u-border.svg" class="hover-image" alt="New Image">
+        </div>
+        </div>
+        <div class="max-w-lg basis-full">
+          <h1
+            class="text-center text-H1_mobile text-sienna-500 sm:pt-large sm:text-H1_desktop"
+          >
+            JULIE NIELSDOTTER <br />
+            <span class="text-H2_mobile sm:text-H2_desktop">JEWELLERY</span>
+          </h1>
+          <p class="pb-medium pt-medium">
+            Sætter du en ære i håndlavet designsmykker af høj kvalitet i et
+            tidløst og klassisk design? Er du også vild med pastelfarver? Så er
+            du kommet til det helt rigtige sted. Her finder du et unikt udvalg
+            af ferskvandsperler, guld og diamanter.
+          </p>
+
+          <p class="pb-medium">
+            Gå på opdagelse i smykkeuniverset og lad dig inspirere.
+          </p>
+          <div class="items-center justify-center sm:flex">
+            <form action="shop.html" method="get">
+              <button
+                class="mereanimate origin-center max-w-xs rounded-knapperRadius bg-primaryButton px-3 py-1 text-knaptekst text-primaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-primaryButtonHover hover:text-primaryButtonHoverTextColor hover:drop-shadow-knapHoverShadow focus:border-primaryButtonBorder focus:ring-4 focus:ring-primaryButtonBorder md:px-6 md:py-2"
+              >
+                Shop smykkerne
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- lille pil -->
+      <div class="main flex items-center justify-center pt-medium">
+        <a href="index.html#second_section">
+          <img
+            class="hidden w-10 drop-shadow-knapShadow sm:block"
+            src="./svg/pilned.svg"
+            alt="scroll ned og se mere pil"
+          />
+        </a>
+      </div>
+
+      <!-- section 2 -->
+      <section class="main scroll-mt-20 pt-large pb-xLarge" id="second_section">
+        <div class="grid grid-cols-2 gap-2 sm:grid-cols-2 md:grid-cols-4">
+          <article
+            class="cursor-pointer overflow-hidden rounded-billederRadius"
+          >
+            <div
+              class="group flex h-[15rem] w-full max-w-lg items-center justify-center bg-[url('/img/earring.webp')] bg-cover bg-center pb-6 shadow drop-shadow-billederShadow transition ease-in hover:scale-105 hover:drop-shadow-cardHoverShadow md:h-[18rem] lg:h-[25rem]"
+            >
+              <form
+                class="self-end transition ease-in group-hover:-translate-y-full"
+                action="shop.html"
+                method="get"
+              >
+                <button
+                  class="max-w-xs rounded-knapperRadius bg-secondaryButton px-3 py-1 text-knaptekst text-secondaryButtonTextColor drop-shadow-knapShadow hover:bg-secondaryButtonHover hover:drop-shadow-knapHoverShadow focus:border-secondaryButtonBorder focus:ring-4 focus:ring-secondaryButtonBorder md:px-6 md:py-2"
+                >
+                  Se øreringe
+                </button>
+              </form>
+            </div>
+          </article>
+
+          <article
+            class="cursor-pointer overflow-hidden rounded-billederRadius"
+          >
+            <div
+              class="group flex h-[15rem] max-w-lg items-center justify-center rounded-billederRadius bg-[url('/img/ring.webp')] bg-cover bg-center pb-6 shadow drop-shadow-billederShadow transition ease-in hover:scale-105 hover:drop-shadow-cardHoverShadow md:h-[18rem] lg:h-[25rem]"
+            >
+              <form
+                class="self-end transition ease-in group-hover:-translate-y-full"
+                action="shop.html"
+                method="get"
+              >
+                <button
+                  class="max-w-xs rounded-knapperRadius bg-secondaryButton px-3 py-1 text-knaptekst text-secondaryButtonTextColor drop-shadow-knapShadow hover:bg-secondaryButtonHover hover:drop-shadow-knapHoverShadow focus:border-secondaryButtonBorder focus:ring-4 focus:ring-secondaryButtonBorder md:px-6 md:py-2"
+                >
+                  Se ringe
+                </button>
+              </form>
+            </div>
+          </article>
+
+          <article
+            class="cursor-pointer overflow-hidden rounded-billederRadius"
+          >
+            <div
+              class="group flex h-[15rem] max-w-lg items-center justify-center rounded-billederRadius bg-[url('/img/necklace.webp')] bg-cover bg-center pb-6 shadow drop-shadow-billederShadow transition ease-in hover:scale-105 hover:drop-shadow-cardHoverShadow md:h-[18rem] lg:h-[25rem]"
+            >
+              <form
+                class="self-end transition ease-in group-hover:-translate-y-full"
+                action="shop.html"
+                method="get"
+              >
+                <button
+                  class="max-w-xs rounded-knapperRadius bg-secondaryButton px-3 py-1 text-knaptekst text-secondaryButtonTextColor drop-shadow-knapShadow hover:bg-secondaryButtonHover hover:drop-shadow-knapHoverShadow focus:border-secondaryButtonBorder focus:ring-4 focus:ring-secondaryButtonBorder md:px-6 md:py-2"
+                >
+                  Se halskæder
+                </button>
+              </form>
+            </div>
+          </article>
+
+          <article
+            class="cursor-pointer overflow-hidden rounded-billederRadius"
+          >
+            <div
+              class="group flex h-[15rem] max-w-lg items-center justify-center rounded-billederRadius bg-[url('/img/bracelet.webp')] bg-cover bg-center pb-6 shadow drop-shadow-billederShadow transition ease-in hover:scale-105 hover:drop-shadow-cardHoverShadow md:h-[18rem] lg:h-[25rem]"
+            >
+              <form
+                class="self-end transition ease-in group-hover:-translate-y-full"
+                action="shop.html"
+                method="get"
+              >
+                <button
+                  class="max-w-xs rounded-knapperRadius bg-secondaryButton px-3 py-1 text-knaptekst text-secondaryButtonTextColor drop-shadow-knapShadow hover:bg-secondaryButtonHover hover:drop-shadow-knapHoverShadow focus:border-secondaryButtonBorder focus:ring-4 focus:ring-secondaryButtonBorder md:px-6 md:py-2"
+                >
+                  Se armbånd
+                </button>
+              </form>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- section 3 -->
+      <section class="main grid-cols-2 md:grid">
+        <div>
+          <h2
+            class="pb-medium text-H2_mobile text-sienna-500 md:text-H2_desktop"
+          >
+            Vær med i processen
+          </h2>
+          <p class="pb-medium">
+            Nogen gange finder man et smykke, man elsker, men farven på smykket,
+            var bare ikke lige den farve, man drømte om. Hos Julie Nielsdotter
+            Jewellery kan du være med til at have indflydelse på dit næste
+            smykke. Du er velkommen til at kigge forbi Butikken på Elmegade 5,
+            KBH N. Her kan du ikke bare shoppe, men også få et indblik i,
+            hvordan de håndlavede smykker kreeres på værkstedet i butikken
+          </p>
+
+          <form action="design_selv.html" method="get">
+            <button
+              class="max-w-xs rounded-knapperRadius bg-secondaryButton px-3 py-1 text-knaptekst text-secondaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-secondaryButtonHover hover:drop-shadow-knapHoverShadow focus:border-secondaryButtonBorder focus:ring-4 focus:ring-secondaryButtonBorder md:px-6 md:py-2"
+            >
+              Special design
+            </button>
+          </form>
+        </div>
+        <div class="flex items-center justify-center pb-medium pt-large">
+          <div class="image-container w-full max-w-sm">
+            <img src="./img/Stregtegning2.svg" class="image" alt="Original Image">
+            <img src="./svg/blinker21.svg" class="hover-image" alt="New Image">
+        </div>
+        </div>
+      </section>
+
+      <!-- section 4 -->
+      <section
+        class="mb-xLarge bg-[url('/img/pearlbg.webp')] bg-cover bg-no-repeat py-20"
+      >
+        <article class="main grid gap-3 md:grid-cols-2 md:gap-16">
+          <div>
+            <img
+              class="rounded-billederRadius drop-shadow-billederShadow"
+              src="./img/gavekort.webp"
+              alt="billede af gavekort"
+            />
+          </div>
+          <div
+            class="rounded-billederRadius bg-pink-200 drop-shadow-billederShadow"
+          >
+            <h2
+              class="px-medium py-medium text-H2_mobile text-sienna-500 md:text-H2_desktop"
+            >
+              Giv et gavekort
+            </h2>
+            <p class="px-medium">
+              Ved du heller ikke, hvad du skal give i gave?
+            </p>
+            <p class="p-medium">
+              Køb et gavekort til unikke håndlavede smykker. Du kan få et
+              gavekort tilsendt fysisk i et lækkert guldkort med din egen
+              personlige hilsen. Står du derimod og mangler det her og nu, kan
+              du få sendt direkte til din e-mail.
+            </p>
+
+            <form
+              class="flex items-center justify-center py-medium"
+              action="gavekort.html"
+              method="get"
+            >
+              <button
+                class="max-w-xs rounded-knapperRadius bg-primaryButton px-3 py-1 text-knaptekst text-primaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-primaryButtonHover hover:text-primaryButtonHoverTextColor hover:drop-shadow-knapHoverShadow focus:border-primaryButtonBorder focus:ring-4 focus:ring-primaryButtonBorder md:px-6 md:py-2"
+              >
+                Køb gavekort
+              </button>
+            </form>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="border-t-4 border-sienna-500 bg-footer pt-11 pb-4 text-body_xs"
+    >
+      <div class="footer_div mx-auto grid-cols-2 justify-evenly sm:grid">
+        <div class="justify-around sm:flex">
+          <div class="basis-full pb-10 sm:pb-0">
+            <p class="cursor-default text-body_semibold">Navigation</p>
+            <ul>
+              <li class="hover_underline"><a href="index.html">Forside</a></li>
+              <li class="hover_underline"><a href="shop.html">Shop</a></li>
+              <li class="hover_underline">
+                <a href="design_selv.html">Design selv</a>
+              </li>
+              <li class="hover_underline">
+                <a href="gavekort.html">Gavekort</a>
+              </li>
+              <li class="hover_underline"><a href="om_julie.html">Om os</a></li>
+            </ul>
+          </div>
+
+          <div class="basis-full pb-10 sm:pb-0">
+            <p class="cursor-default text-body_semibold">Information</p>
+            <ul>
+              <li class="hover_underline"><a href="#">FAQ</a></li>
+              <li class="hover_underline">
+                <a href="#">Forsendelses- og returpolitik</a>
+              </li>
+              <li class="hover_underline">
+                <a href="#">Handelsbetingelser</a>
+              </li>
+              <li class="hover_underline">
+                <a href="#">Cookie- og privatlivspolitik</a>
+              </li>
+              <li class="hover_underline">
+                <a href="om_julie.html  ">Kontakt</a>
+              </li>
+              <li class="hover_underline">
+                <a href="sitemap.html">Sitemap</a>
+              </li>
+              <li class="hover_underline">
+                <a href="komponenter.html">Komponenter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex justify-around">
+          <div class="basis-full">
+            <p class="cursor-default text-body_semibold">Butikken</p>
+            <ul>
+              <li class="hover_underline"><a href="#">Åbningstider</a></li>
+            </ul>
+          </div>
+          <div class="basis-full">
+            <p class="cursor-default text-body_semibold">Sociale medier</p>
+            <ul class="flex gap-4">
+              <li>
+                <a
+                  href="https://www.instagram.com/julienielsdotterjewellery/"
+                  target="_blank"
+                  ><img
+                    src="./svg/instagram.svg"
+                    alt="Instagram-ikon"
+                    title="Åbn Instagram"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/julienielsdotterjewellery"
+                  target="_blank"
+                  ><img
+                    src="./svg/facebook.svg"
+                    alt="FaceBook-ikon"
+                    title="Åbn Facebook"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="justify-center pt-16 text-center sm:flex">
+        <p class="text-body_xs">Copyright © 2022 | julienielsdotter.com</p>
+        <p>| Tlf. 30 32 52 07</p>
+      </div>
+      <div class="justify-center sm:flex">
+        <p class="text-center">CVR 12 34 56 78</p>
+      </div>
+    </footer>
+    <!-- Footer slut -->
+    
+  </body>
+</html>

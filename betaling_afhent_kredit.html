@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/bju1jkc.css" />
+    <title>Betaling</title>
+    <script type="module" crossorigin src="./assets/main.453e5de3.js"></script>
+    <link rel="stylesheet" href="./assets/main.4e037f6d.css">
+  </head>
+  <body class="bg-pink-100 text-body_base text-copyColor">
+    <!-- Header -->
+    <header class="sticky top-0 z-10 bg-menuBackgroundColor">
+      <nav
+        class="flex items-center justify-between border-b-2 border-sienna-500 px-6 py-4 text-menulinks_mobile text-overskriftColor"
+      >
+        <div>
+          <a href="index.html"
+            ><img
+              class="w-20"
+              src="./img/julienielsdotter_logo-8.png"
+              alt="Logo - til forsiden"
+              title="Gå til forsiden"
+          /></a>
+        </div>
+
+        <div class="hidden sm:block">
+          <ul class="flex flex-col gap-10 sm:flex-row">
+            <li class="py-4">
+              <a class="a_underline relative" href="shop.html">Shop</a>
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="design_selv.html"
+                >Design selv</a
+              >
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="gavekort.html">Gavekort</a>
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="om_julie.html">Om Julie</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ikoner til søg og kurv -->
+        <div class="hidden sm:block">
+          <ul class="flex gap-5">
+            <li>
+              <img
+                src="./svg/soeg.svg"
+                alt="Søg på siden"
+                title="Søg på produkter"
+                class="cursor-pointer"
+              />
+            </li>
+            <li>
+              <a title="Gå til kurven" href="indkoebskurv.html"
+                ><img src="./svg/kurv.svg" alt="Til kurven"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Menu i mobil -->
+        <div
+          class="menu_punkter fixed top-0 right-0 z-10 hidden h-full w-screen bg-pink-100"
+        >
+          <!-- Ikon til luk i burger -->
+          <div class="flex justify-end pr-6 pt-10">
+            <img
+              class="menu_luk cursor-pointer"
+              src="./svg/close.svg"
+              alt="Luk menu"
+              title="Luk menu"
+            />
+          </div>
+
+          <!-- Menupunkter mobil -->
+          <ul class="flex w-full flex-col pt-6 text-center sm:flex-row">
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="index.html">Forside</a>
+            </li>
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="shop.html">Shop</a>
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="design_selv.html"
+                >Design selv</a
+              >
+            </li>
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="gavekort.html">Gavekort</a>
+            </li>
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="om_julie.html">Om Julie</a>
+            </li>
+          </ul>
+          <ul class="flex justify-center gap-8">
+            <li class="py-4">
+              <img
+                src="./svg/soeg.svg"
+                alt="Søg på siden"
+                title="Søg på produkter"
+                class="cursor-pointer"
+              />
+            </li>
+            <li class="py-4">
+              <a title="Gå til kurven" href="indkoebskurv.html"
+                ><img src="./svg/kurv.svg" alt="Til kurven"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ikon til burger menu -->
+        <div class="flex items-center gap-8 sm:hidden">
+          <img
+            class="menu_click w-8 cursor-pointer"
+            src="./svg/burger.svg"
+            alt="burger menu"
+            title="Åbn menu"
+          />
+        </div>
+      </nav>
+    </header>
+    <!-- Header slut -->
+
+    <main class="main">
+      <section class="flex py-medium">
+        <div class="flex items-center gap-4">
+          <a href="koeb_leveringsmetode.html"
+            ><img src="./svg/tilbage.svg" alt="tilbage til forrige side knap"
+          /></a>
+          <a
+            href="koeb_leveringsmetode.html"
+            class="hidden text-body_xs hover:underline sm:block"
+            >Tilbage til leveringsmetode</a
+          >
+        </div>
+        <div class="mx-auto flex gap-4">
+          <div>
+            <a
+              href="koeb_oplysninger.html"
+              class="hidden cursor-pointer text-body_base sm:block"
+            >
+              Oplysninger
+            </a>
+            <div
+              class="w-14 rounded-knapperRadius bg-sienna-200 py-0.5 sm:w-24 lg:w-32"
+            ></div>
+          </div>
+          <div>
+            <a href="koeb_leveringsmetode.html">
+              <p class="hidden cursor-pointer text-body_base sm:block">
+                Levering
+              </p>
+            </a>
+            <div
+              class="w-14 rounded-knapperRadius bg-sienna-200 py-0.5 sm:w-24 lg:w-32"
+            ></div>
+          </div>
+          <div>
+            <p class="hidden cursor-default text-body_base sm:block">
+              Betaling
+            </p>
+            <div
+              class="o w-14 rounded-knapperRadius bg-sienna-200 py-0.5 sm:w-24 lg:w-32"
+            ></div>
+          </div>
+          <div>
+            <p class="hidden cursor-default text-body_base sm:block">
+              Bekræftelse
+            </p>
+            <div
+              class="w-14 rounded-knapperRadius bg-sienna-200 py-0.5 opacity-30 sm:w-24 lg:w-32"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h1
+          class="pb-medium text-center text-H1_mobile text-sienna-500 sm:text-left lg:text-H1_desktop"
+        >
+          <span class="text-body_base italic">03</span>Betaling
+        </h1>
+        <hr class="border-t-2 text-pink-200" />
+        <div
+          class="relative pt-medium pb-xLarge sm:grid sm:grid-cols-4 sm:gap-10 lg:grid-cols-5"
+        >
+          <div
+            class="relative max-w-4xl pb-large sm:col-span-2 sm:pb-0 lg:col-span-3"
+          >
+            <p class="text-body_semibold">
+              Vælg korttype og indtast kortoplysninger
+            </p>
+            <div class="flex flex-col gap-y-4 pt-small pb-medium">
+              <div
+                class="w-full max-w-sm cursor-default rounded-knapperRadius border-4 border-black-500 bg-pink-500 px-4 py-6 drop-shadow-knapShadow transition ease-in hover:drop-shadow-knapHoverShadow focus:border-black-500 focus:ring-4 focus:ring-black-500"
+              >
+                <div class="flex items-center justify-center gap-3">
+                  <img src="./svg/kredit.svg" alt="kreditkort" />
+                  <div class="flex flex-col items-start justify-center">
+                    <p class="text-body_base" id="semibold_bitter_05">Kredit</p>
+                  </div>
+                  <div class="ml-auto flex items-center justify-center gap-3">
+                    <div class="relative">
+                      <img src="./svg/valgt.svg" alt="valgt" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <a class="group" href="betaling_afhent_debit.html">
+                <div
+                  class="w-full max-w-sm cursor-pointer rounded-knapperRadius border border-sienna-700 bg-pink-100 px-4 py-6 drop-shadow-knapShadow transition ease-in hover:drop-shadow-knapHoverShadow focus:border-black-500 focus:ring-4 focus:ring-black-500"
+                >
+                  <div class="flex items-center justify-center gap-3">
+                    <img src="./svg/debit.svg" alt="debitkort" />
+                    <div class="flex flex-col items-start justify-center">
+                      <p class="text-body_base" id="semibold_bitter_06">
+                        Debit
+                      </p>
+                    </div>
+                    <div class="ml-auto flex items-center justify-center gap-3">
+                      <div class="relative">
+                        <img src="./svg/ikke_valgt.svg" alt="ikke valgt" /><img
+                          class="billedskift absolute top-0 left-0 opacity-0 transition group-hover:opacity-100"
+                          src="./svg/valgt.svg"
+                          alt="valgt"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <img src="./img/kort.png" alt="kort" />
+            <div class="grid-cols-5 gap-x-4 gap-y-2 sm:grid">
+              <form class="col-span-5 pt-2">
+                <label class="text-body_xs" for="fullname">
+                  Kortholderens fulde navn *</label
+                >
+                <input
+                  class="block w-full rounded-formRadius border-formBorder bg-formBgColor text-fromPlaceholderTextColor transition ease-in focus:border-formFocusBorder focus:outline-none focus:ring-2 focus:ring-formFocusBorder"
+                  id="fullname"
+                  type="text"
+                  placeholder="Sisse Falcke"
+                  autocomplete="name"
+                  required
+                />
+              </form>
+              <form class="col-span-5 pt-2">
+                <label class="text-body_xs" for="card-number">
+                  Kortnummer *</label
+                >
+                <input
+                  class="block w-full rounded-formRadius border-formBorder bg-formBgColor text-fromPlaceholderTextColor transition ease-in focus:border-formFocusBorder focus:outline-none focus:ring-2 focus:ring-formFocusBorder"
+                  id="card-number"
+                  type="number"
+                  placeholder="0000 0000 0000 0000"
+                  required
+                />
+              </form>
+              <form class="col-span-2 pt-2">
+                <label class="text-body_xs" for="expiration">
+                  Udløbsdato *
+                </label>
+                <input
+                  class="block w-full rounded-formRadius border-formBorder bg-formBgColor text-fromPlaceholderTextColor transition ease-in focus:border-formFocusBorder focus:outline-none focus:ring-2 focus:ring-formFocusBorder"
+                  id="expiration"
+                  type="number"
+                  placeholder="MM / ÅÅ"
+                  required
+                />
+              </form>
+              <form class="col-span-3 pt-2">
+                <label class="text-body_xs" for="ccv"> CCV * </label>
+                <input
+                  class="block w-full rounded-formRadius border-formBorder bg-formBgColor text-fromPlaceholderTextColor transition ease-in focus:border-formFocusBorder focus:outline-none focus:ring-2 focus:ring-formFocusBorder"
+                  id="ccv"
+                  type="number"
+                  placeholder="000"
+                  required
+                />
+              </form>
+              <p class="pb-medium text-body_xs">* Skal udfyldes</p>
+            </div>
+
+            <form class="hidden sm:block" action="betalt.html" method="get">
+              <button
+                class="w-full rounded-knapperRadius bg-primaryButton px-6 py-2 text-knaptekst text-primaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-primaryButtonHover hover:text-primaryButtonHoverTextColor hover:drop-shadow-knapHoverShadow focus:border-primaryButtonBorder focus:ring-4 focus:ring-primaryButtonBorder"
+              >
+                Fuldfør betaling
+              </button>
+            </form>
+          </div>
+
+          <div class="col-span-2 max-w-2xl">
+            <div class="flex pb-small sm:pb-medium">
+              <p class="text-body_semibold">Din kurv</p>
+              <a
+                href="indkoebskurv.html"
+                class="ml-auto cursor-pointer text-body_xs underline"
+                >Redigér kurv</a
+              >
+            </div>
+            <div class="flex gap-2 pb-medium">
+              <img
+                class="w-1/6 rounded-billederRadius"
+                src="./img/roundMilkywayRing.webp"
+                alt="billede af round milkyway ring"
+              />
+              <p>
+                <span class="text-body_semibold">Milkyway ring</span>
+                <br />
+                <span class="text-body_base">18 kt. guld</span>
+              </p>
+              <p class="ml-auto text-body_semibold">DKK 4.400,00</p>
+            </div>
+            <div class="flex items-center justify-center pb-medium">
+              <hr class="w-11/12 text-pink-200" />
+            </div>
+            <div
+              class="grid grid-cols-2 items-center gap-2 pb-medium text-body_semibold sm:gap-6"
+            >
+              <p>Subtotal</p>
+              <div class="ml-auto">
+                <p>DKK 3.300,00</p>
+              </div>
+              <p>Levering</p>
+              <div class="ml-auto">
+                <p>DKK 80,00</p>
+              </div>
+              <p>Moms</p>
+              <div class="ml-auto">
+                <p>DKK 1.100,00</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-center">
+              <hr class="w-11/12 text-pink-200" />
+            </div>
+            <div
+              class="flex grid-cols-5 flex-col gap-y-2 gap-x-4 pt-small pb-medium xl:grid"
+            >
+              <form class="col-span-3 pt-2">
+                <label class="text-body_xs" for="kampagnekode">
+                  Indtast kampagnekode</label
+                >
+                <input
+                  class="block w-full rounded-formRadius border-formBorder bg-formBgColor text-fromPlaceholderTextColor transition ease-in focus:border-formFocusBorder focus:outline-none focus:ring-2 focus:ring-formFocusBorder"
+                  id="kampagnekode"
+                  type="text"
+                  placeholder="0000 0000 0000"
+                />
+              </form>
+              <div class="col-span-2 mt-auto">
+                <button
+                  class="w-full rounded-knapperRadius bg-secondaryButton px-6 py-2 text-knaptekst text-secondaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-secondaryButtonHover hover:drop-shadow-knapHoverShadow focus:border-secondaryButtonBorder focus:ring-4 focus:ring-secondaryButtonBorder"
+                >
+                  Indløs kode
+                </button>
+              </div>
+            </div>
+            <div class="flex items-center justify-center">
+              <hr class="w-11/12 text-pink-200" />
+            </div>
+            <div class="flex pt-medium">
+              <p class="text-body_semibold">Total</p>
+              <p class="ml-auto">
+                DKK
+                <span
+                  class="futura text-menulinks_mobile sm:text-menulinks_desktop"
+                  >4.480,00</span
+                >
+              </p>
+            </div>
+
+            <form
+              class="block pt-large sm:hidden"
+              action="betalt.html"
+              method="get"
+            >
+              <button
+                class="w-full rounded-knapperRadius bg-primaryButton px-6 py-2 text-knaptekst text-primaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-primaryButtonHover hover:text-primaryButtonHoverTextColor hover:drop-shadow-knapHoverShadow focus:border-primaryButtonBorder focus:ring-4 focus:ring-primaryButtonBorder"
+              >
+                Fuldfør betaling
+              </button>
+            </form>
+          </div>
+          <span
+            class="absolute hidden h-full w-0.5 bg-pink-200 md:left-[50%] md:block lg:left-[60.25%] 2xl:hidden"
+          ></span>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="border-t-4 border-sienna-500 bg-footer pt-11 pb-4 text-body_xs"
+    >
+      <div class="footer_div mx-auto grid-cols-2 justify-evenly sm:grid">
+        <div class="justify-around sm:flex">
+          <div class="basis-full pb-10 sm:pb-0">
+            <p class="cursor-default text-body_semibold">Navigation</p>
+            <ul>
+              <li class="hover_underline"><a href="index.html">Forside</a></li>
+              <li class="hover_underline"><a href="shop.html">Shop</a></li>
+              <li class="hover_underline">
+                <a href="design_selv.html">Design selv</a>
+              </li>
+              <li class="hover_underline">
+                <a href="gavekort.html">Gavekort</a>
+              </li>
+              <li class="hover_underline"><a href="om_julie.html">Om os</a></li>
+            </ul>
+          </div>
+
+          <div class="basis-full pb-10 sm:pb-0">
+            <p class="cursor-default text-body_semibold">Information</p>
+            <ul>
+              <li class="hover_underline"><a href="#">FAQ</a></li>
+              <li class="hover_underline">
+                <a href="#">Forsendelses- og returpolitik</a>
+              </li>
+              <li class="hover_underline">
+                <a href="#">Handelsbetingelser</a>
+              </li>
+              <li class="hover_underline">
+                <a href="#">Cookie- og privatlivspolitik</a>
+              </li>
+              <li class="hover_underline">
+                <a href="om_julie.html  ">Kontakt</a>
+              </li>
+              <li class="hover_underline">
+                <a href="sitemap.html">Sitemap</a>
+              </li>
+              <li class="hover_underline">
+                <a href="komponenter.html">Komponenter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex justify-around">
+          <div class="basis-full">
+            <p class="cursor-default text-body_semibold">Butikken</p>
+            <ul>
+              <li class="hover_underline"><a href="#">Åbningstider</a></li>
+            </ul>
+          </div>
+          <div class="basis-full">
+            <p class="cursor-default text-body_semibold">Sociale medier</p>
+            <ul class="flex gap-4">
+              <li>
+                <a
+                  href="https://www.instagram.com/julienielsdotterjewellery/"
+                  target="_blank"
+                  ><img
+                    src="./svg/instagram.svg"
+                    alt="Instagram-ikon"
+                    title="Åbn Instagram"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/julienielsdotterjewellery"
+                  target="_blank"
+                  ><img
+                    src="./svg/facebook.svg"
+                    alt="FaceBook-ikon"
+                    title="Åbn Facebook"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="justify-center pt-16 text-center sm:flex">
+        <p class="text-body_xs">Copyright © 2022 | julienielsdotter.com</p>
+        <p>| Tlf. 30 32 52 07</p>
+      </div>
+      <div class="justify-center sm:flex">
+        <p class="text-center">CVR 12 34 56 78</p>
+      </div>
+    </footer>
+    <!-- Footer slut -->
+    
+  </body>
+</html>

@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produktside</title>
+    <link rel="stylesheet" href="https://use.typekit.net/kae7xyj.css" />
+    <script type="module" crossorigin src="./assets/main.453e5de3.js"></script>
+    <link rel="stylesheet" href="./assets/main.4e037f6d.css">
+  </head>
+  <body class="bg-pink-100 text-body_base text-copyColor">
+    <!-- Header -->
+    <header class="sticky top-0 z-10 bg-menuBackgroundColor">
+      <nav
+        class="flex items-center justify-between border-b-2 border-sienna-500 px-6 py-4 text-menulinks_mobile text-overskriftColor"
+      >
+        <div>
+          <a href="index.html"
+            ><img
+              class="w-20"
+              src="./img/julienielsdotter_logo-8.png"
+              alt="Logo - til forsiden"
+              title="Gå til forsiden"
+          /></a>
+        </div>
+
+        <div class="hidden sm:block">
+          <ul class="flex flex-col gap-10 sm:flex-row">
+            <li class="py-4">
+              <a class="a_chosen relative" href="shop.html">Shop</a>
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="design_selv.html"
+                >Design selv</a
+              >
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="gavekort.html">Gavekort</a>
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="om_julie.html">Om Julie</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ikoner til søg og kurv -->
+        <div class="hidden sm:block">
+          <ul class="flex gap-5">
+            <li>
+              <img
+                src="./svg/soeg.svg"
+                alt="Søg på siden"
+                title="Søg på produkter"
+                class="cursor-pointer"
+              />
+            </li>
+            <li>
+              <a title="Gå til kurven" href="indkoebskurv.html"
+                ><img src="./svg/kurv.svg" alt="Til kurven"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Menu i mobil -->
+        <div
+          class="menu_punkter fixed top-0 right-0 z-10 hidden h-full w-screen bg-pink-100"
+        >
+          <!-- Ikon til luk i burger -->
+          <div class="flex justify-end pr-6 pt-10">
+            <img
+              class="menu_luk cursor-pointer"
+              src="./svg/close.svg"
+              alt="Luk menu"
+              title="Luk menu"
+            />
+          </div>
+
+          <!-- Menupunkter mobil -->
+          <ul class="flex w-full flex-col pt-6 text-center sm:flex-row">
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="index.html">Forside</a>
+            </li>
+            <li class="w-full py-4">
+              <a class="a_chosen relative" href="shop.html">Shop</a>
+            </li>
+            <li class="py-4">
+              <a class="a_underline relative" href="design_selv.html"
+                >Design selv</a
+              >
+            </li>
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="gavekort.html">Gavekort</a>
+            </li>
+            <li class="w-full py-4">
+              <a class="a_underline relative" href="om_julie.html">Om Julie</a>
+            </li>
+          </ul>
+          <ul class="flex justify-center gap-8">
+            <li class="py-4">
+              <img
+                src="./svg/soeg.svg"
+                alt="Søg på siden"
+                title="Søg på produkter"
+                class="cursor-pointer"
+              />
+            </li>
+            <li class="py-4">
+              <a title="Gå til kurven" href="indkoebskurv.html"
+                ><img src="./svg/kurv.svg" alt="Til kurven"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ikon til burger menu -->
+        <div class="flex items-center gap-8 sm:hidden">
+          <img
+            class="menu_click w-8 cursor-pointer"
+            src="./svg/burger.svg"
+            alt="burger menu"
+            title="Åbn menu"
+          />
+        </div>
+      </nav>
+    </header>
+    <!-- Header slut -->
+
+    <main class="main">
+      <!-- filter-knapper -->
+      <h1
+        class="pb-medium pt-large text-H1_mobile text-sienna-500 sm:text-H1_desktop"
+      >
+        Filtrer på smykkerne
+      </h1>
+
+      <section
+        class="pb-xLarge"
+        id="step"
+        x-data="{materiale: 'allematerialer', sten: 'allesten', kategori: henturlparam(), skjultekategorier : 0 }"
+      >
+        <div class="flex justify-center pb-large">
+          <!-- Styling af filterknapperne på form-->
+          <form id="filtre" class="col grid-col grid gap-4 sm:flex sm:gap-10">
+            <div class="grid grid-cols-1">
+              <label for="kategori">Kategori</label>
+              <select
+                class="rounded-knapperRadius border-none bg-primaryButton py-1 pl-3 text-knaptekst text-primaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-primaryButtonHover hover:text-primaryButtonHoverTextColor hover:drop-shadow-knapHoverShadow focus:border-primaryButtonBorder focus:ring-4 focus:ring-primaryButtonBorder sm:py-2"
+                name="kategori"
+                id="kategori"
+                x-model="kategori"
+                form="filtre"
+                x-on:change="$nextTick(() => { ingenkategorier() });"
+              >
+                <option value="allekategorier">Alle</option>
+                <option value="bracelet">Armbånd</option>
+                <option value="necklace">Halskæder</option>
+                <option value="ring">Ringe</option>
+                <option value="earring">Øreringe</option>
+              </select>
+            </div>
+            <div class="grid grid-cols-1">
+              <label for="materiale">Materiale</label>
+              <select
+                class="rounded-knapperRadius border-none bg-primaryButton py-1 pl-3 text-knaptekst text-primaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-primaryButtonHover hover:text-primaryButtonHoverTextColor hover:drop-shadow-knapHoverShadow focus:border-primaryButtonBorder focus:ring-4 focus:ring-primaryButtonBorder sm:py-2"
+                name="materiale"
+                id="materiale"
+                x-model="materiale"
+                form="filtre"
+                x-on:change="$nextTick(() => { ingenkategorier() });"
+              >
+                <option value="allematerialer">Alle materialer</option>
+                <option value="8ktguld">8 kt guld</option>
+                <option value="14ktguld">14 kt guld</option>
+                <option value="18ktguld">18 kt guld</option>
+                <option value="solv">Sølv</option>
+                <option value="guldbelagt">Guldbelagt</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-1">
+              <label for="sten">Sten</label>
+              <select
+                class="rounded-knapperRadius border-none bg-primaryButton py-1 pl-3 text-knaptekst text-primaryButtonTextColor drop-shadow-knapShadow transition ease-in hover:bg-primaryButtonHover hover:text-primaryButtonHoverTextColor hover:drop-shadow-knapHoverShadow focus:border-primaryButtonBorder focus:ring-4 focus:ring-primaryButtonBorder sm:py-2"
+                name="sten"
+                id="sten"
+                x-model="sten"
+                form="filtre"
+                x-on:change="$nextTick(() => { ingenkategorier() });"
+              >
+                <option value="allesten">Alle sten</option>
+                <option value="diamanter">Diamanter</option>
+                <option value="safir">Safir</option>
+                <option value="perler">Perler</option>
+                <option value="none">Ingen sten</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div class="kategorier grid grid-cols-2 gap-3 sm:gap-10 lg:grid-cols-3">
+          <!-- card 1 -->
+          <article
+            id="roundMilkywayRing"
+            class="kategori mx-auto max-w-md basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+            :class="{'hidden': !(['allematerialer', '14ktguld'].includes(materiale) && ['allesten', 'diamanter', 'safir'].includes(sten) && ['allekategorier', 'ring'].includes(kategori) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <a href="single_view.html">
+              <div
+                class="absolute top-10 z-50 rounded-r-nyhedRadius bg-pink-900 py-2 pl-2 pr-4 text-pink-100"
+              >
+                <p>Nyhed</p>
+              </div>
+              <img
+                class="z-0 rounded-t-billederRadius"
+                src="img/roundMilkywayRing.webp"
+                alt="Billede af produktet round milkyway ring"
+              />
+              <div class="p-2 sm:p-6">
+                <p class="text-body_xs font-semibold sm:text-body_semibold">
+                  <span class="before">Round milkyway ring </span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_xs sm:text-body_base">
+                      14,8 kt. guld m. perler
+                    </p>
+                    <p class="before text-body_xs sm:text-body_base">DKK</p>
+                    <p class="before text-body_xs md:text-body_base">
+                      4.400,00
+                    </p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-0.5 sm:gap-2">
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- card 2 -->
+          <article
+            id="amuletBracelet"
+            class="kategori mx-auto max-w-md basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+            :class="{'hidden': !(['allematerialer', '14ktguld', '8ktguld', 'solv'].includes(materiale) && ['allesten', 'none'].includes(sten) && ['allekategorier', 'bracelet'].includes(kategori) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <!-- Nyhedsikon -->
+            <div
+              class="absolute top-10 z-50 rounded-r-nyhedRadius bg-pink-900 py-2 pl-2 pr-4 text-pink-100"
+            >
+              <p>Nyhed</p>
+            </div>
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="img/AmuletBracelet.webp"
+                alt="Billede af produktet amulet bracelet"
+              />
+              <div class="p-2 sm:p-6">
+                <p class="text-body_xs font-semibold sm:text-body_semibold">
+                  <span class="before">Amulet bracelet</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_xs sm:text-body_base">
+                      14,8 kt. guld m. perler
+                    </p>
+                    <p class="before text-body_xs sm:text-body_base">DKK</p>
+                    <p class="before text-body_xs sm:text-body_base">
+                      3.500,00
+                    </p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-0.5 sm:gap-2">
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- card 3 -->
+          <article
+            id="lupinDiamondNecklace"
+            class="kategori mx-auto max-w-md basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+            :class="{'hidden': !(['allematerialer', 'solv', '8ktguld', 'guldbelagt'].includes(materiale) && ['allesten', 'diamanter'].includes(sten) && ['allekategorier', 'necklace'].includes(kategori) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <!-- Nyhedsikon -->
+            <div
+              class="absolute top-10 z-50 rounded-r-nyhedRadius bg-pink-900 py-2 pl-2 pr-4 text-pink-100"
+            >
+              <p>Nyhed</p>
+            </div>
+
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="img/LupinDiamondNecklace.webp"
+                alt="Lupin diamant halskæde"
+              />
+              <div class="p-2 sm:p-6">
+                <p class="text-body_xs font-semibold sm:text-body_semibold">
+                  <span class="before">Lupin diamond necklace</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_xs md:text-body_base">
+                      14,8 kt. guld m. perler
+                    </p>
+                    <p class="before text-body_xs md:text-body_base">DKK</p>
+                    <p class="before text-body_xs md:text-body_base">
+                      8.500,00
+                    </p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-0.5 sm:gap-2">
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- card 4 -->
+          <article
+            id="largePearlHoops"
+            class="kategori mx-auto max-w-md basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+            :class="{'hidden': !(['allematerialer', '14ktguld', '18ktguld'].includes(materiale) && ['allesten', 'perler'].includes(sten) && ['allekategorier', 'earing'].includes(kategori) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="img/LargePearlHoops.webp"
+                alt="Billede af produktet large pearl hoops"
+              />
+              <div class="p-2 sm:p-6">
+                <p class="text-body_xs font-semibold sm:text-body_semibold">
+                  <span class="before">Large pearl hoops</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_xs md:text-body_base">
+                      14,8 kt. guld m. perler
+                    </p>
+                    <p class="before text-body_xs md:text-body_base">DKK</p>
+                    <p class="before text-body_xs md:text-body_base">
+                      6.300,00
+                    </p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-0.5 sm:gap-2">
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- card 5 -->
+          <article
+            id="miniInitailAmulet"
+            class="kategori mx-auto max-w-md basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+            :class="{'hidden': !(['allematerialer', '14ktguld', 'guldbelagt'].includes(materiale) && ['allesten', 'none'].includes(sten) && ['allekategorier', 'necklace'].includes(kategori) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="img/MiniInitailAmulet.webp"
+                alt="Billede af produktet mini initial amulet"
+              />
+              <div class="p-2 sm:p-6">
+                <p class="text-body_xs font-semibold sm:text-body_semibold">
+                  <span class="before">Mini initial amulet</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_xs md:text-body_base">
+                      14,8 kt. guld m. perler
+                    </p>
+                    <p class="before text-body_xs md:text-body_base">DKK</p>
+                    <p class="before text-body_xs md:text-body_base">
+                      3.350,00
+                    </p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-0.5 sm:gap-2">
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- card 6 -->
+          <article
+            id="pinkMorganiteCocktailRing"
+            class="kategori mx-auto max-w-md basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+            :class="{'hidden': !(['allematerialer', '14ktguld', '8ktguld'].includes(materiale) && ['allesten', 'diamanter', 'safir'].includes(sten) && ['allekategorier', 'ring'].includes(kategori) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="img/PinkMorganiteCocktailRing.webp"
+                alt="Billede af produktet pink morganite cocktailring"
+              />
+              <div class="p-2 sm:p-6">
+                <p class="text-body_xs font-semibold sm:text-body_semibold">
+                  <span class="before">Pink morganite cocktailring</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_xs md:text-body_base">
+                      14,8 kt. guld m. perler
+                    </p>
+                    <p class="before text-body_xs md:text-body_base">DKK</p>
+                    <p class="before text-body_xs md:text-body_base">
+                      25.000,00
+                    </p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-0.5 sm:gap-2">
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- card 7 -->
+          <article
+            id="planetMiniBracelet"
+            class="kategori mx-auto max-w-md basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+            :class="{'hidden': !(['allematerialer', '18ktguld', 'solv'].includes(materiale) && ['allesten', 'diamanter'].includes(sten) && ['allekategorier', 'bracelet'].includes(kategori) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="img/PlanetMiniBracelet.webp"
+                alt="Billede af produktet planet mini bracelet"
+              />
+              <div class="p-2 sm:p-6">
+                <p class="text-body_xs font-semibold sm:text-body_semibold">
+                  <span class="before">Planet mini bracelet</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_xs md:text-body_base">
+                      14,8 kt. guld m. perler
+                    </p>
+                    <p class="before text-body_xs md:text-body_base">DKK</p>
+                    <p class="before text-body_xs md:text-body_base">
+                      4.900,00
+                    </p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-0.5 sm:gap-2">
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- card 8 -->
+          <article
+            id="planetNecklace3Diamond"
+            class="kategori mx-auto max-w-md basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+            :class="{'hidden': !(['allematerialer', 'guldbelagt', 'solv'].includes(materiale) && ['allesten', 'diamanter'].includes(sten) && ['allekategorier', 'necklace'].includes(kategori) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="img/PlanetNecklace3Diamond.webp"
+                alt="Billede af produktet planet necklace 3 diamond"
+              />
+              <div class="p-2 sm:p-6">
+                <p class="text-body_xs font-semibold sm:text-body_semibold">
+                  <span class="before">Planet necklace 3 diamond</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_xs md:text-body_base">
+                      14,8 kt. guld m. perler
+                    </p>
+                    <p class="before text-body_xs md:text-body_base">DKK</p>
+                    <p class="before text-body_xs md:text-body_base">
+                      1.400,00
+                    </p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-0.5 sm:gap-2">
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- card 9 -->
+          <article
+            id="planetRing5"
+            class="kategori mx-auto max-w-md basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+            :class="{'hidden': !(['allematerialer', '14ktguld', 'guldbelagt' , 'solv'].includes(materiale) && ['allesten', 'diamanter'].includes(sten) && ['allekategorier', 'ring'].includes(kategori) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="img/PlanetRing5.webp"
+                alt="Billede af produktet planetn ring 5"
+              />
+              <div class="p-2 sm:p-6">
+                <p class="text-body_xs font-semibold sm:text-body_semibold">
+                  <span class="before">Planet ring 5</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_xs md:text-body_base">
+                      14,8 kt. guld m. perler
+                    </p>
+                    <p class="before text-body_xs md:text-body_base">DKK</p>
+                    <p class="before text-body_xs md:text-body_base">
+                      22.500,00
+                    </p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-0.5 sm:gap-2">
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- card 10 -->
+          <article
+            id="planetStud1"
+            class="kategori mx-auto max-w-md basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+            :class="{'hidden': !(['allematerialer', 'solv', '8ktguld'].includes(materiale) && ['allesten', 'safir'].includes(sten) && ['allekategorier', 'earring'].includes(kategori) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="img/PlanetStud1.webp"
+                alt="Billede af produktet planet stud 1"
+              />
+              <div class="p-2 sm:p-6">
+                <p class="text-body_xs font-semibold sm:text-body_semibold">
+                  <span class="before">Planet stud 1</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_xs md:text-body_base">
+                      14,8 kt. guld m. perler
+                    </p>
+                    <p class="before text-body_xs md:text-body_base">DKK</p>
+                    <p class="before text-body_xs md:text-body_base">
+                      4.900,00
+                    </p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-0.5 sm:gap-2">
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- card 11 -->
+          <article
+            id="7-PearlHoop"
+            class="kategori mx-auto max-w-md basis-full cursor-pointer rounded-cardsRadius bg-cardsBgColor drop-shadow-cardShadow transition ease-in hover:drop-shadow-cardHoverShadow"
+            :class="{'hidden': !(['allematerialer', '18ktguld', '14ktguld'].includes(materiale) && ['allesten', 'perler'].includes(sten) && ['allekategorier', 'earring'].includes(kategori) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <a href="single_view.html">
+              <img
+                class="rounded-t-billederRadius"
+                src="img/7-PearlHoop.webp"
+                alt="Billede af produktet 7-pearl hoop"
+              />
+              <div class="p-2 sm:p-6">
+                <p class="text-body_xs font-semibold sm:text-body_semibold">
+                  <span class="before">7-pearl hoops</span>
+                  <span class="after">Fås i</span>
+                </p>
+                <div class="flex">
+                  <div class="inline-flex gap-2">
+                    <p class="after text-body_xs md:text-body_base">
+                      14,8 kt. guld m. perler
+                    </p>
+                    <p class="before text-body_xs md:text-body_base">DKK</p>
+                    <p class="before text-body_xs md:text-body_base">
+                      17.500,00
+                    </p>
+                  </div>
+
+                  <div class="ml-auto inline-flex gap-0.5 sm:gap-2">
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/pink.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i pink"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/orange.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i orange"
+                    />
+                    <img
+                      class="before w-2 sm:w-5"
+                      src="./svg/green.svg"
+                      alt="Lile ikon der viser at smykket fås med en stenfarve i grøn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+          <div class="flex justify-center">
+            <p id="ingenkategorier" class="hidden items-center pb-large">
+              Øv, jeg har desværre ikke et produkt, der matcher din filtrering -
+              prøv igen :-)
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="border-t-4 border-sienna-500 bg-footer pt-11 pb-4 text-body_xs"
+    >
+      <div class="footer_div mx-auto grid-cols-2 justify-evenly sm:grid">
+        <div class="justify-around sm:flex">
+          <div class="basis-full pb-10 sm:pb-0">
+            <p class="cursor-default text-body_semibold">Navigation</p>
+            <ul>
+              <li class="hover_underline"><a href="index.html">Forside</a></li>
+              <li class="hover_underline"><a href="shop.html">Shop</a></li>
+              <li class="hover_underline">
+                <a href="design_selv.html">Design selv</a>
+              </li>
+              <li class="hover_underline">
+                <a href="gavekort.html">Gavekort</a>
+              </li>
+              <li class="hover_underline"><a href="om_julie.html">Om os</a></li>
+            </ul>
+          </div>
+
+          <div class="basis-full pb-10 sm:pb-0">
+            <p class="cursor-default text-body_semibold">Information</p>
+            <ul>
+              <li class="hover_underline"><a href="#">FAQ</a></li>
+              <li class="hover_underline">
+                <a href="#">Forsendelses- og returpolitik</a>
+              </li>
+              <li class="hover_underline">
+                <a href="#">Handelsbetingelser</a>
+              </li>
+              <li class="hover_underline">
+                <a href="#">Cookie- og privatlivspolitik</a>
+              </li>
+              <li class="hover_underline">
+                <a href="om_julie.html  ">Kontakt</a>
+              </li>
+              <li class="hover_underline">
+                <a href="sitemap.html">Sitemap</a>
+              </li>
+              <li class="hover_underline">
+                <a href="komponenter.html">Komponenter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex justify-around">
+          <div class="basis-full">
+            <p class="cursor-default text-body_semibold">Butikken</p>
+            <ul>
+              <li class="hover_underline"><a href="#">Åbningstider</a></li>
+            </ul>
+          </div>
+          <div class="basis-full">
+            <p class="cursor-default text-body_semibold">Sociale medier</p>
+            <ul class="flex gap-4">
+              <li>
+                <a
+                  href="https://www.instagram.com/julienielsdotterjewellery/"
+                  target="_blank"
+                  ><img
+                    src="./svg/instagram.svg"
+                    alt="Instagram-ikon"
+                    title="Åbn Instagram"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/julienielsdotterjewellery"
+                  target="_blank"
+                  ><img
+                    src="./svg/facebook.svg"
+                    alt="FaceBook-ikon"
+                    title="Åbn Facebook"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="justify-center pt-16 text-center sm:flex">
+        <p class="text-body_xs">Copyright © 2022 | julienielsdotter.com</p>
+        <p>| Tlf. 30 32 52 07</p>
+      </div>
+      <div class="justify-center sm:flex">
+        <p class="text-center">CVR 12 34 56 78</p>
+      </div>
+    </footer>
+
+    <script>
+      function henturlparam() {
+        let kategorifraurl = "allekategorier";
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        if (urlParams.has("kategori")) {
+          kategorifraurl = urlParams.get("kategori");
+        }
+        return kategorifraurl;
+      }
+      function ingenkategorier() {
+        const skjultekategorier =
+          document.querySelectorAll(".kategori.hidden").length;
+        if (skjultekategorier === 11) {
+          document.querySelector("#ingenkategorier").classList.remove("hidden");
+        } else {
+          document.querySelector("#ingenkategorier").classList.add("hidden");
+        }
+      }
+    </script>
+
+    
+  </body>
+</html>
